@@ -12,7 +12,6 @@ public class Div {
      * Mod 2 returns 0 if the last digit is divisible by two (Even)
      */
     public boolean two(int n){
-
         return (n % 10)%2 == 0;
     }
 
@@ -32,18 +31,20 @@ public class Div {
         return (n % 1000)%8 == 0;
     }
 
-    // Method Stubs
-
-    private int digitSum(){
-        return 0;
+    private int digitSum(int n){
+        int sum = 0;
+        while (n != 0) {
+            sum += n % 10;
+            n /= 10;
+        }
+        return sum;
     }
     /**
      * A number is divisible by three iff
      * The sum of it's digits are divisible by three
      */
     public boolean three(int n){
-        //digitSum(n)
-        return false;
+        return digitSum(n)%3 == 0;
     }
 
     /**
@@ -51,8 +52,7 @@ public class Div {
      * The sum of it's digits are divisible by nine
      */
     public boolean nine(int n){
-        //digitSum(n)
-        return false;
+        return digitSum(n)%9 == 0;
     }
 
     /**
@@ -60,8 +60,7 @@ public class Div {
      * It's even and divisible by three
      */
     public boolean six(int n){
-        //(n%2 == 0) && three(n)
-        return false;
+        return (n%2 == 0) && three(n);
     }
 
     /**
@@ -70,9 +69,34 @@ public class Div {
      * Mod 10 returns the last digit of the number (Remainder Division)
      */
     public boolean five(int n){
+        return (n % 10)%5 == 0 || (n % 10)%5 == 5;
+    }
+
+    /**
+     * A number is divisible by eleven iff
+     * The sum of it's digits are zero or a multiple of eleven
+     */
+    public boolean eleven(int n){
+        return digitSum(n) == 0 || digitSum(n)%11 == 0;
+    }
+
+    // Method Stubs
+    /**
+     * A number is divisible by seven if
+     * You add or subtract a multiple of seven
+     * The resulting number is a multiple of seven
+     */
+    public boolean seven(int n){
         return false;
     }
 
-    // 11 7 17
+    /**
+     * A number is divisible by any odd number that doesn't end in five if
+     * You add or subtract a multiple of the number
+     * The resulting number is a multiple of the number
+     */
+    public boolean oddNotFive(int n){
+        return false;
+    }
 
 }
