@@ -75,16 +75,16 @@ public class DivTest {
 
     @Test
     public void testEleven() throws Exception {
-        //assertTrue(d.eleven(53867));
+        assertTrue(d.eleven(53867));
         assertFalse(d.eleven(4969));
-        //assertTrue(d.eleven(3828));
-        //assertTrue(d.eleven(941369));
+        assertTrue(d.eleven(3828));
+        assertTrue(d.eleven(941369));
     }
 
     //Stubs
     @Test
     public void testSeven() throws Exception {
-
+        d.seven(53867);
     }
 
     @Test
